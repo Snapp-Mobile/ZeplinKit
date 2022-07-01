@@ -1,0 +1,60 @@
+[{
+  "id": "5dbad85a76ea51c1f35b6f69",
+  "creator": {
+    "id": "5d9caaecb4a3fa9bc9718686",
+    "email": "5d9caaecb4a3fa9bc9718686@user.zeplin.io",
+    "username": "zozo",
+    "emotar": "🍎",
+    "avatar": "http://placekitten.com/200/300",
+    "last_seen": 1616739240
+  },
+  "commit": {
+    "message": "Update paddings",
+    "author": {
+      "id": "5d9caaecb4a3fa9bc9718686",
+      "email": "5d9caaecb4a3fa9bc9718686@user.zeplin.io",
+      "username": "zozo",
+      "emotar": "🍎",
+      "avatar": "http://placekitten.com/200/300",
+      "last_seen": 1616739240
+    },
+    "color": {
+      "r": 145,
+      "g": 223,
+      "b": 33,
+      "a": 1
+    }
+  },
+  "image_url": "http://placekitten.com/2560/1920",
+  "thumbnails": {
+    "small": "http://placekitten.com/256/256",
+    "medium": "http://placekitten.com/512/512",
+    "large": "http://placekitten.com/1024/1024"
+  },
+  "width": 2560,
+  "height": 1920,
+  "density_scale": 2,
+  "source": "sketch/value",
+  "created": 1572347818,
+  "background_color": {
+    "source_id": "0BEBFEB3-A107-4D1D-A3B0-77D1FBD35F01",
+    "r": 143,
+    "g": 152,
+    "b": 5,
+    "a": 1
+  },
+  "links": [
+    {
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 40,
+        "height": 40
+      },
+      "destination": {
+        "name": "Artboard",
+        "type": "screen"
+      }
+    }
+  ]
+}]

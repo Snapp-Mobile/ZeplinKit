@@ -1,0 +1,38 @@
+[{
+  "id": "5fbe387f8c72ef23659fb500",
+  "created": 1586852836,
+  "type": "project.color",
+  "action": "created",
+  "is_read": false,
+  "resource": {
+    "id": "5dbad85a76ea51c1f35b6f69",
+    "type": "Color",
+    "extra": {
+      "name": "baby poop green",
+      "r": 143,
+      "g": 152,
+      "b": 5,
+      "a": 1
+    }
+  },
+  "context": {
+    "project": {
+      "id": "5db81e73e1e36ee19f138c1a",
+      "type": "Project",
+      "extra": {
+        "name": "HAL 9000",
+        "platform": "web"
+      }
+    }
+  },
+  "actor": {
+    "user": {
+      "id": "5d9caaecb4a3fa9bc9718686",
+      "email": "5d9caaecb4a3fa9bc9718686@user.zeplin.io",
+      "username": "zozo",
+      "emotar": "🍎",
+      "avatar": "http://placekitten.com/200/300",
+      "last_seen": 1616739240
+    }
+  }
+}]

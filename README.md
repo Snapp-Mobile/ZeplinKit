@@ -1,3 +1,3 @@
 # ZeplinKit
 
-A description of this package.
+Swift client library for the public Zeplin API

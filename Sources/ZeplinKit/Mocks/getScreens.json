@@ -1,0 +1,33 @@
+[{
+  "id": "5dbad85a76ea51c1f35b6f69",
+  "name": "Login",
+  "description": "Login screen for HAL 9000",
+  "tags": [
+    "mobile",
+    "login"
+  ],
+  "image": {
+    "width": 2560,
+    "height": 1920,
+    "original_url": "http://placekitten.com/2560/1920",
+    "thumbnails": {
+      "small": "http://placekitten.com/256/256",
+      "medium": "http://placekitten.com/512/512",
+      "large": "http://placekitten.com/1024/1024"
+    }
+  },
+  "created": 1517184000,
+  "updated": 1572347818,
+  "number_of_notes": 7,
+  "number_of_versions": 4,
+  "section": {
+    "id": "5db81e6e6a4462065f04d932"
+  },
+  "variant": {
+    "value": "Default",
+    "group": {
+      "id": "607437cd62d37a0bc869fc63",
+      "name": "Login"
+    }
+  }
+}]

@@ -1,0 +1,7 @@
+{
+  "access_token": "abc123",
+  "expires_in": 3600000,
+  "refresh_token": "123abc",
+  "refresh_expires_in": 86400000,
+  "token_type": "bearer"
+}

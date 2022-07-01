@@ -1,0 +1,36 @@
+[{
+  "id": "5db81e73e1e36ee19f138c1a",
+  "name": "HAL 9000",
+  "description": "UI designs for the onboard computer on the spaceship Discovery 1",
+  "platform": "web",
+  "thumbnail": "http://placekitten.com/200/300",
+  "status": "active",
+  "created": 1517184000,
+  "updated": 1572347818,
+  "organization": {
+    "id": "5d9caaecb4a3fa9b972f86ce",
+    "name": "Acme, Inc.",
+    "logo": "http://placekitten.com/200/300"
+  },
+  "workflow_status": {
+    "id": "5dbad85a76ea51c1f35b6f69",
+    "name": "Done",
+    "color": {
+      "name": "yellow",
+      "r": 254,
+      "g": 207,
+      "b": 51,
+      "a": 1
+    }
+  },
+  "number_of_members": 47,
+  "number_of_screens": 112,
+  "number_of_components": 46,
+  "number_of_connected_components": 32,
+  "number_of_text_styles": 28,
+  "number_of_colors": 17,
+  "number_of_spacing_tokens": 63,
+  "linked_styleguide": {
+    "id": "5db81e6e6a4462065f04d932"
+  }
+}]
