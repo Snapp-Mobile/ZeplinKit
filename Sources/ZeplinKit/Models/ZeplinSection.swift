@@ -11,7 +11,7 @@ import Foundation
 /// A model that represents a section on Zeplin
 ///
 /// Sections are used within the projects to organize screens
-public struct ZeplinSection: Decodable, Hashable, Equatable, Sendable {
+public struct ZeplinSection: Decodable, Hashable, Identifiable, Equatable, Sendable {
     /// The unique id of the screen section
     public let id: String
     /// The name of the screen section
