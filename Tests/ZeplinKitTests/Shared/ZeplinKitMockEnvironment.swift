@@ -10,10 +10,10 @@ import Foundation
 @testable import ZeplinKit
 
 final class ZeplinKitMockEnvironment: FetcherEnvironment {
-    var urlSession: URLSession = .shared
-    var isNetworkingAvailable = true
-    var refreshTokenURL: APIURL? = ZeplinAPIURL.refreshToken(ZeplinKitMocks.zeplinAPIConfiguration)
-    var apiErrorsLogger: FetcherLogger?
+    let urlSession: URLSession
+    let isNetworkingAvailable = true
+    let refreshTokenURL: APIURL? = ZeplinAPIURL.refreshToken(ZeplinKitMocks.zeplinAPIConfiguration)
+    let apiErrorsLogger: FetcherLogger?
 
     func updateToken(to newToken: Token?, logger: FetcherLogger?) async throws -> Token? {
         return ZeplinKitMocks.token
@@ -35,6 +35,7 @@ final class ZeplinKitMockEnvironment: FetcherEnvironment {
         let configuration = URLSessionConfiguration.ephemeral
         configuration.protocolClasses = [ZeplinKitMockURLProtocol.self]
         urlSession = URLSession(configuration: configuration)
+        apiErrorsLogger = nil
     }
 }
 
