@@ -28,7 +28,7 @@ public struct ZeplinLayerFill: Decodable, Sendable {
     }
 }
 
-public struct ZeplinColorData: Decodable, Hashable, Equatable, CustomStringConvertible, ZeplinColorComponents {
+public struct ZeplinColorData: Decodable, Hashable, Equatable, Sendable, CustomStringConvertible, ZeplinColorComponents {
     public let sourceId: String?
     public let red: Int
     public let green: Int

@@ -17,7 +17,7 @@ public protocol ZeplinColorComponents: Sendable {
 }
 
 /// A model that represents a Zeplin color
-public struct ZeplinColor: Codable, Hashable, CustomStringConvertible, ZeplinColorComponents {
+public struct ZeplinColor: Codable, Hashable, Sendable, CustomStringConvertible, ZeplinColorComponents {
     /// Name of the color
     public let alpha: Double
     /// Red component of the color

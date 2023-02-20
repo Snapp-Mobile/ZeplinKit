@@ -9,7 +9,7 @@
 import Foundation
 
 /// A model that represents a successful comment creation response
-public struct ZeplinCreateCommentResponse: Decodable {
+public struct ZeplinCreateCommentResponse: Decodable, Sendable {
     /// The is of the comment
     public let id: String
 }

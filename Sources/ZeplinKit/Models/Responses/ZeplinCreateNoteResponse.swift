@@ -9,7 +9,7 @@
 import Foundation
 
 /// A model that represents a successful note creation response
-public struct ZeplinCreateNoteResponse: Decodable {
+public struct ZeplinCreateNoteResponse: Decodable, Sendable {
     /// The id of the note
     public let id: String
 }
