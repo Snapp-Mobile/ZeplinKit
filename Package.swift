@@ -18,7 +18,7 @@ let package = Package(
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
-        .package(url: "https://github.com/Snapp-Mobile/Fetcher", from: "0.0.2"),
+        .package(url: "https://github.com/Snapp-Mobile/Fetcher", branch: "next"),
         .package(url: "https://github.com/marmelroy/Zip", from: "2.0.0")
     ],
     targets: [
