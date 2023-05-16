@@ -70,7 +70,7 @@ struct ZeplinKitMocks {
                                        description: "UI designs for the onboard computer on the spaceship Discovery 1",
                                        thumbnailURL: "http://placekitten.com/200/300",
                                        platform: .web,
-                                       status: "active",
+                                       status: .active,
                                        created: 1_517_184_000.0,
                                        updated: 1_572_347_818.0,
                                        numberOfScreens: 112,
@@ -133,7 +133,7 @@ struct ZeplinKitMocks {
                                        updated: 1_572_347_818.0)
 
     static let note = ZeplinNote(id: "5dbad85a76ea51c1f35b6f69",
-                                 order: 1,
+                                 order: "1",
                                  color: ZeplinKitMocks.color,
                                  position: ZeplinNotePosition(originX: 0.93, originY: 0.1),
                                  comments: [ZeplinKitMocks.comment],

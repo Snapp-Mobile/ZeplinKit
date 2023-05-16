@@ -19,7 +19,7 @@ public struct ZeplinNote: Decodable, Hashable, Equatable, Sendable {
     /// The unique id of the note
     public let id: String
     /// Order of the note in the screen (e.g., 1, 2, 3, so on)
-    public let order: Int
+    public let order: String
     /// Color of the note pin
     public let color: ZeplinColor
     /// Normalized position of the note on screen
@@ -34,7 +34,7 @@ public struct ZeplinNote: Decodable, Hashable, Equatable, Sendable {
     public let created: Double
 
     public init(id: String,
-                order: Int,
+                order: String,
                 color: ZeplinColor,
                 position: ZeplinNotePosition,
                 comments: [ZeplinComment],
