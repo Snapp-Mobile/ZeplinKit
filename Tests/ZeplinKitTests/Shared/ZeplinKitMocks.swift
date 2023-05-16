@@ -133,7 +133,7 @@ struct ZeplinKitMocks {
                                        updated: 1_572_347_818.0)
 
     static let note = ZeplinNote(id: "5dbad85a76ea51c1f35b6f69",
-                                 order: "1",
+                                 order: 1,
                                  color: ZeplinKitMocks.color,
                                  position: ZeplinNotePosition(originX: 0.93, originY: 0.1),
                                  comments: [ZeplinKitMocks.comment],

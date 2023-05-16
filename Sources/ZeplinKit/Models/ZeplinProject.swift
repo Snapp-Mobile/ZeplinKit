@@ -27,6 +27,19 @@ public enum ZeplinPlatform: String, Decodable, CustomStringConvertible, Sendable
     }
 }
 
+public enum ZeplinProjectStatus: String, Decodable, CustomStringConvertible, Sendable {
+    case active, archived
+
+    public var description: String {
+        switch self {
+        case .active:
+            return "active"
+        case .archived:
+            return "archived"
+        }
+    }
+}
+
 /// A model that represents a reference to a styleguide
 public struct LinkedStyleguide: Decodable, Sendable {
     /// Id of the entity
@@ -48,7 +61,7 @@ public struct ZeplinProject: Decodable, Hashable, Identifiable, Equatable, Senda
     public let platform: ZeplinPlatform
     /// The status of the project
     /// (one of "active" or "archived")
-    public let status: String
+    public let status: ZeplinProjectStatus
     /// The unix timestamp when the project was created
     public let created: Double
     /// The unix timestamp when the project was updated

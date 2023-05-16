@@ -9,7 +9,7 @@ import Foundation
 
 public struct ZeplinHorizontalGrid: Decodable, Hashable, Equatable, Sendable {
     public let gutterHeight: Double
-    public let numberOfRows: Int
+    public let numberOfRows: Int?
     public let rowHeight: Double
 
     enum CodingKeys: String, CodingKey {
