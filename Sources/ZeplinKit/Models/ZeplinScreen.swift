@@ -41,14 +41,17 @@ public struct ZeplinScreen: Decodable, Hashable, Identifiable, Equatable, Sendab
         case id, name, description, image, section, created, updated, tags
     }
 
+    public var displayName: String {
+        name ?? "Untitled"
+    }
+
     public func hash(into hasher: inout Hasher) {
         hasher.combine(id)
     }
 
     public func matches(term: String) -> Bool {
         let searchTerm = term.lowercased()
-        let screenName = name ?? "untitled"
-        return screenName.lowercased().contains(searchTerm) || tags.contains(where: { $0.lowercased().contains(searchTerm) })
+        return displayName.lowercased().contains(searchTerm) || tags.contains(where: { $0.lowercased().contains(searchTerm) })
     }
 
     public static func == (lhs: Self, rhs: Self) -> Bool {
