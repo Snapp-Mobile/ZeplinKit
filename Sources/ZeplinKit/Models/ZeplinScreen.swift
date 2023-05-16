@@ -13,7 +13,7 @@ public struct ZeplinScreen: Decodable, Hashable, Identifiable, Equatable, Sendab
     /// The unique id of the screen
     public let id: String
     /// The name of the screen
-    public let name: String
+    public let name: String?
     /// The description of the screen
     public let description: String?
     /// The unix timestamp when the screen was created
@@ -21,7 +21,7 @@ public struct ZeplinScreen: Decodable, Hashable, Identifiable, Equatable, Sendab
     /// The unix timestamp when the screen was updated
     public let updated: Double?
     /// The image representing the screen
-    public let image: ZeplinImage
+    public let image: ZeplinImage?
     /// The background color of the screen
     public let backgroundColor: ZeplinColor?
     /// Reference of the section that contains the screen
@@ -47,7 +47,8 @@ public struct ZeplinScreen: Decodable, Hashable, Identifiable, Equatable, Sendab
 
     public func matches(term: String) -> Bool {
         let searchTerm = term.lowercased()
-        return name.lowercased().contains(searchTerm) || tags.contains(where: { $0.lowercased().contains(searchTerm) })
+        let screenName = name ?? "untitled"
+        return screenName.lowercased().contains(searchTerm) || tags.contains(where: { $0.lowercased().contains(searchTerm) })
     }
 
     public static func == (lhs: Self, rhs: Self) -> Bool {
