@@ -10,6 +10,7 @@ import Foundation
 
 public struct ZeplinBoundingRectangle: Decodable, Hashable, Sendable {
     public var originY, originX, width, height: Double
+    /// Absolute position of the bounding rectangle
     public let absolute: ZeplinPosition
 
     enum CodingKeys: String, CodingKey {

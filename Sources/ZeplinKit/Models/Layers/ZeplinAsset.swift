@@ -8,8 +8,21 @@
 import Foundation
 import UIKit
 
+/// Assets are automatically generated while exporting designs based on the platform the design is exported.
+/// Asset formats and densities change according to these platforms.
+///
+/// | Platform | Formats |
+/// |:---------|:--------|
+/// | Base | PNG (1.0, 1.5, 2.0, 3.0, 4.0), and PDF |
+/// | Web | PNG (1.0, 2.0, 3.0), SVG, and JPG (bitmap image) |
+/// | iOS | PNG (1.0, 2.0, 3.0), and PDF |
+/// | Android | PNG (1.0, 1.5, 2.0, 3.0, 4.0), and SVG |
 public struct ZeplinAsset: Decodable, Sendable {
-    public let layerSourceID, layerName: String?
+    /// Layer's identifier in the design tool
+    public let layerSourceID: String?
+    /// Name of the layer containing the asset
+    public let layerName: String?
+    /// Display name of the asset
     public let displayName: String
     public var contents: [ZeplinAssetContent]
 
@@ -77,7 +90,10 @@ public struct ZeplinAssetContent: Decodable, Sendable {
         }
     }
 
+    /// URL of the asset content
     public let url: String
+    /// Format of the asset content
     public let format: Format
+    /// Density of the asset content
     public let density: Double?
 }

@@ -8,8 +8,12 @@
 import Foundation
 
 public struct ZeplinLinkDestination: Decodable, Hashable, Equatable, Sendable {
+    public enum DestinationType: String, Decodable, Sendable {
+        case screen, component, previous
+    }
+
     public let name: String
-    public let type: String
+    public let type: DestinationType
 
     public func hash(into hasher: inout Hasher) {
         hasher.combine(name)

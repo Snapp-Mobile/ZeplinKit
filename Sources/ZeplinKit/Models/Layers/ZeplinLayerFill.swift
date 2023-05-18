@@ -16,15 +16,28 @@ public enum ZeplinGradientType: String, Decodable, Sendable {
     case linear, radial, angular
 }
 
+public enum ZeplinBlendMode: String, Decodable, Sendable {
+    case normal, darken, multiply, colorBurn = "color-burn", lighten, screen, colorDodge = "color-dodge", overlay,
+         softLight = "soft-light", hardLight = "hard-light", difference, exclusion, hue, saturation, color, luminosity,
+         sourceIn = "source-in", sourceOut = "source-out", sourceAtop = "source-atop",
+         destinationOver = "destination-over", destinationIn = "destination-in", destinationOut = "destination-out",
+         destinationAtop = "destination-atop", dissolve, linearBurn = "linear-burn", linearDodge = "linear-dodge",
+         darkerColor = "darker-color", lighterColor = "lighter-color",  vividLight = "vivid-light",
+         linearLight = "linear-light", pinLight = "pin-light", hardMix = "hard-mix", subtract, divide
+}
+
 public struct ZeplinLayerFill: Decodable, Sendable {
+    /// Type of the fill
     public let type: ZeplinLayerFillType
     public let color: ZeplinColorData?
     public let gradient: ZeplinGradient?
+    public let blendMode: ZeplinBlendMode?
 
     enum CodingKeys: String, CodingKey {
         case type
         case color
         case gradient
+        case blendMode = "blend_mode"
     }
 }
 

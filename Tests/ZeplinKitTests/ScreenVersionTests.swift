@@ -103,7 +103,7 @@ final class ScreenVersionTests: XCTestCase {
         XCTAssertEqual(version.links.first?.rect.width, 40.0)
         XCTAssertEqual(version.links.first?.rect.height, 40.0)
         XCTAssertEqual(version.links.first?.destination.name, "Artboard")
-        XCTAssertEqual(version.links.first?.destination.type, "screen")
+        XCTAssertEqual(version.links.first?.destination.type, .screen)
         XCTAssertEqual(version.layers.first?.id, "5db81e73e1e36ee19f138c1a")
         XCTAssertEqual(version.layers.first?.type, .shape)
         XCTAssertEqual(version.layers.first?.name, "First rectangle in group")

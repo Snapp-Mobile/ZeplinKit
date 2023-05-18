@@ -8,7 +8,13 @@
 import Foundation
 
 public struct ZeplinLayerTextStyle: Decodable, Sendable {
+    public let range: ZeplinTextStyleRange?
     public let style: ZeplinTextStyleData?
+}
+
+public struct ZeplinTextStyleRange: Decodable, Sendable {
+    public let location: Double?
+    public let length: Double?
 }
 
 public struct ZeplinTextStyleData: Decodable, Sendable {
@@ -16,7 +22,7 @@ public struct ZeplinTextStyleData: Decodable, Sendable {
     public let fontFamily: String
     public let fontSize, fontWeight: Double
     public let fontStyle: String
-    public let fontStretch: Int
+    public let fontStretch: Double
     public let lineHeight: Int?
     public let letterSpacing: Double?
     public let textAlign: String?
