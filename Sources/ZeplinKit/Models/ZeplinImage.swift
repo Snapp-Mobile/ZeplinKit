@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct ZeplinImageThumbnails: Decodable, Hashable, Equatable, Sendable{
+public struct ZeplinImageThumbnails: Codable, Hashable, Equatable, Sendable{
     public let large: String
     public let medium: String
     public let small: String

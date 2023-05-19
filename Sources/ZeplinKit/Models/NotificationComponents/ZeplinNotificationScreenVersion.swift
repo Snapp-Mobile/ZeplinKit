@@ -12,7 +12,7 @@ public struct ZeplinNotificationScreenVersion: Codable, CustomStringConvertible,
     /// The URL of the version image
     public let imageURL: String
     /// The URLS of the thumbnails
-    public let thumbnails: [String: String]
+    public let thumbnails: ZeplinImageThumbnails
     /// The width of the version image
     public let width: Float
     /// The height of the version image
