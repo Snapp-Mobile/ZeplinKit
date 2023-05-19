@@ -91,7 +91,12 @@ struct ZeplinKitMocks {
                                      updated: 1_572_347_818.0,
                                      image: ZeplinImage(width: 2560.0,
                                                         height: 1920.0,
-                                                        originalURL: "http://placekitten.com/2560/1920"),
+                                                        originalURL: "http://placekitten.com/2560/1920",
+                                                        thumbnails: .init(
+                                                            large: "http://placekitten.com/1024/768",
+                                                            medium: "http://placekitten.com/512/384",
+                                                            small: "http://placekitten.com/256/192")
+                                                       ),
                                      backgroundColor: nil,
                                      section: ZeplinSection(id: "5db81e6e6a4462065f04d932"),
                                      tags: ["mobile", "login"],

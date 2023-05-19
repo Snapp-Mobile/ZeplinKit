@@ -17,7 +17,8 @@ public struct ZeplinScreenVersionSummary: Decodable, Hashable, Identifiable, Equ
     /// The commit associated with the version
     public let commit: ZeplinScreenVersionCommit?
     /// URL of the image for the version
-    public let imageURL: String
+    public let imageURL: String?
+    public let thumbnails: ZeplinImageThumbnails?
     /// Source application of the version
     public let source: String
     /// Width of the version
@@ -32,7 +33,7 @@ public struct ZeplinScreenVersionSummary: Decodable, Hashable, Identifiable, Equ
     public let backgroundColor: ZeplinColor?
 
     enum CodingKeys: String, CodingKey {
-        case id, creator, source, width, height, created, commit
+        case id, creator, source, width, height, created, commit, thumbnails
         case imageURL = "image_url"
         case density = "density_scale"
         case backgroundColor = "background_color"

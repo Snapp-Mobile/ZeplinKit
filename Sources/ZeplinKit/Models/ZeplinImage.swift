@@ -8,6 +8,12 @@
 
 import Foundation
 
+public struct ZeplinImageThumbnails: Decodable, Hashable, Equatable, Sendable{
+    public let large: String
+    public let medium: String
+    public let small: String
+}
+
 /// A model that represents a Zeplin image
 public struct ZeplinImage: Decodable, Hashable, Equatable, Sendable {
     /// Width of the component image
@@ -17,8 +23,10 @@ public struct ZeplinImage: Decodable, Hashable, Equatable, Sendable {
     /// URL of the original image for the component (from the latest version)
     public let originalURL: String
 
+    public let thumbnails: ZeplinImageThumbnails
+
     enum CodingKeys: String, CodingKey {
-        case width, height
+        case width, height, thumbnails
         case originalURL = "original_url"
     }
 

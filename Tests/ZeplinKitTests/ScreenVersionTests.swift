@@ -126,7 +126,7 @@ final class ScreenVersionTests: XCTestCase {
         XCTAssertEqual(version.layers.first?.borders?.first?.fill?.color?.blue, 5)
         XCTAssertEqual(version.layers.first?.borders?.first?.fill?.color?.alpha, 1.0)
         XCTAssertEqual(version.layers.first?.opacity, 1.0)
-        XCTAssertEqual(version.layers.first?.blendMode, "normal")
+        XCTAssertEqual(version.layers.first?.blendMode, .normal)
         XCTAssertEqual(version.layers.first?.borderRadius, 0.0)
         XCTAssertEqual(version.layers.first?.rotation, 0.0)
         XCTAssertEqual(version.layers.first?.exportable, false)

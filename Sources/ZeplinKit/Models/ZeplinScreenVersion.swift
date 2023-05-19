@@ -14,6 +14,7 @@ public struct ZeplinScreenVersion: Decodable, Hashable, Identifiable, Sendable {
     public let width: Double
     public let height: Double
     public let imageURL: String?
+    public let thumbnails: ZeplinImageThumbnails?
     public let source: String
     public let density: Double
     public let backgroundColor: ZeplinColorData?
@@ -26,7 +27,7 @@ public struct ZeplinScreenVersion: Decodable, Hashable, Identifiable, Sendable {
         case imageURL = "image_url"
         case backgroundColor = "background_color"
         case density = "density_scale"
-        case id, width, height, source, layers, assets, grid, links, creator, commit
+        case id, width, height, source, layers, assets, grid, links, creator, commit, thumbnails
     }
 
     public static func == (lhs: Self, rhs: Self) -> Bool {
