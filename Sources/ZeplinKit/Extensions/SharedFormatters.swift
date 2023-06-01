@@ -11,7 +11,7 @@ import Foundation
 /// A structure containing predefined formatters
 public struct SharedFormatters: Sendable {
     /// Abberviated relative datetime formatter (shows dates as "15 hr. ago", "1 day ago", etc.)
-    public static var relativeDateFormatter: RelativeDateTimeFormatter = {
+    public static let relativeDateFormatter: RelativeDateTimeFormatter = {
         let formatter = RelativeDateTimeFormatter()
         formatter.unitsStyle = .abbreviated
         formatter.locale = .current
@@ -19,7 +19,7 @@ public struct SharedFormatters: Sendable {
         return formatter
     }()
 
-    public static var numericValueFormatter: NumberFormatter = {
+    public static let numericValueFormatter: NumberFormatter = {
         let formatter = NumberFormatter()
         formatter.alwaysShowsDecimalSeparator = true
         formatter.minimumFractionDigits = 1
