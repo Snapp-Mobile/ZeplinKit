@@ -8,7 +8,7 @@
 import CoreGraphics
 import Fetcher
 import Foundation
-import os.log
+import OSLog
 import UIKit
 import Zip
 

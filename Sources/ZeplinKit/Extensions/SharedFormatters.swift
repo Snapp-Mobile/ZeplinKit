@@ -8,6 +8,8 @@
 
 import Foundation
 
+extension RelativeDateTimeFormatter: @retroactive @unchecked Sendable {}
+
 /// A structure containing predefined formatters
 public struct SharedFormatters: Sendable {
     /// Abberviated relative datetime formatter (shows dates as "15 hr. ago", "1 day ago", etc.)
