@@ -1,10 +1,12 @@
 # ``ZeplinKit``
 
+@Metadata {
+    @PageImage(purpose: icon, source:"ZeplinKit-logo")
+}
+
 Swift client library for the public Zeplin API.
 
 ## Overview
-
-![ZeplinKit logo](ZeplinKit-logo.png)
 
 ZeplinKit is a collection of data models and preconfigured API URLs to consume the public Zeplin API. Adding ZeplinKit to your app gives you a flexible client for consuming the Zeplin API that fits in any workflow.
 
