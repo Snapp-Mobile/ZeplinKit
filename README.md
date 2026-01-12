@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="Sources/Documentation.docc/Resources/ZeplinKit-logo.png" width="200" alt="ZeplinKit Logo">
+  <img src="Sources/ZeplinKit.docc/Resources/ZeplinKit-logo.png" width="200" alt="ZeplinKit Logo">
 </div>
 
 # ZeplinKit
