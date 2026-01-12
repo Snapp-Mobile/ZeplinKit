@@ -1,6 +1,6 @@
 //
 //  SharedAssertions.swift
-//  
+//
 //
 //  Created by Ilian Konchev on 8.02.22.
 //

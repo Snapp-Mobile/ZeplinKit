@@ -1,6 +1,6 @@
 //
 //  ZeplinScreenVersionSummary.swift
-//  
+//
 //
 //  Created by Ilian Konchev on 27.02.20.
 //  Copyright © 2020 Ilian Konchev. All rights reserved.

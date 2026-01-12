@@ -1,6 +1,6 @@
 //
 //  ZeplinNote.swift
-//  
+//
 //
 //  Created by Ilian Konchev on 13.02.20.
 //  Copyright © 2020 Ilian Konchev. All rights reserved.
@@ -33,14 +33,16 @@ public struct ZeplinNote: Decodable, Hashable, Equatable, Sendable {
     /// The unix timestamp when the note was created
     public let created: Double
 
-    public init(id: String,
-                order: String,
-                color: ZeplinColor,
-                position: ZeplinNotePosition,
-                comments: [ZeplinComment],
-                creator: ZeplinUser,
-                status: Status,
-                created: Double) {
+    public init(
+        id: String,
+        order: String,
+        color: ZeplinColor,
+        position: ZeplinNotePosition,
+        comments: [ZeplinComment],
+        creator: ZeplinUser,
+        status: Status,
+        created: Double
+    ) {
         self.id = id
         self.order = order
         self.color = color
@@ -54,7 +56,8 @@ public struct ZeplinNote: Decodable, Hashable, Equatable, Sendable {
     /// `UIColor` representation of the note pin color
     public var pinColor: UIColor {
         guard let colorName = color.name, let zeplinColor = ZeplinNamedColor(rawValue: colorName) else {
-            return UIColor(displayP3Red: CGFloat(color.red) / 255, green: CGFloat(color.green) / 255, blue: CGFloat(color.blue) / 255, alpha: 1.0)
+            return UIColor(
+                displayP3Red: CGFloat(color.red) / 255, green: CGFloat(color.green) / 255, blue: CGFloat(color.blue) / 255, alpha: 1.0)
         }
         return zeplinColor.color
     }

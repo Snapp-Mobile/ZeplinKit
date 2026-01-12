@@ -1,11 +1,12 @@
 //
 //  ZeplinKitMockURLProtocol.swift
-//  
+//
 //
 //  Created by Ilian Konchev on 4.02.22.
 //
 
 import Foundation
+
 @testable import ZeplinKit
 
 final class ZeplinKitMockURLProtocol: URLProtocol {

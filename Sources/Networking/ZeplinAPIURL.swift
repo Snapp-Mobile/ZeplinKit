@@ -1,6 +1,6 @@
 //
 //  ZeplinAPIURL.swift
-//  
+//
 //
 //  Created by Ilian Konchev on 13.02.20.
 //  Copyright © 2020 Ilian Konchev. All rights reserved.
@@ -47,48 +47,48 @@ public enum ZeplinAPIURL: APIURL {
         switch self {
         case .getToken, .refreshToken:
             return "/oauth/token"
-        case let .getProjects(limit, offset):
+        case .getProjects(let limit, let offset):
             return "/projects?limit=\(limit)&offset=\(offset)"
-        case let .getProject(projectId):
+        case .getProject(let projectId):
             return "/projects/\(projectId)"
-        case let .getProjectMembers(project, limit, offset):
+        case .getProjectMembers(let project, let limit, let offset):
             return "/projects/\(project.id)/members?limit=\(limit)&offset=\(offset)"
-        case let .inviteMember(organization, _):
+        case .inviteMember(let organization, _):
             return "/organizations/\(organization.id)/members"
-        case let .updateMemberRole(organization, member, _):
+        case .updateMemberRole(let organization, let member, _):
             return "/organizations/\(organization.id)/members/\(member.user.id)"
-        case let .removeMember(organization, member):
+        case .removeMember(let organization, let member):
             return "/organizations/\(organization.id)/members/\(member.user.id)"
-        case let .getScreens(project, limit, offset):
+        case .getScreens(let project, let limit, let offset):
             return "/projects/\(project.id)/screens?sort=section&limit=\(limit)&offset=\(offset)"
-        case let .getScreen(projectId, screenId):
+        case .getScreen(let projectId, let screenId):
             return "/projects/\(projectId)/screens/\(screenId)"
-        case let .getSections(project, limit, offset):
+        case .getSections(let project, let limit, let offset):
             return "/projects/\(project.id)/screen_sections?limit=\(limit)&offset=\(offset)"
-        case let .getScreenVersions(project, screen, limit, offset):
+        case .getScreenVersions(let project, let screen, let limit, let offset):
             return "/projects/\(project.id)/screens/\(screen.id)/versions?limit=\(limit)&offset=\(offset)"
-        case let .getNotes(project, screen, limit, offset):
+        case .getNotes(let project, let screen, let limit, let offset):
             return "/projects/\(project.id)/screens/\(screen.id)/notes?limit=\(limit)&offset=\(offset)"
-        case let .getNote(project, screen, noteId):
+        case .getNote(let project, let screen, let noteId):
             return "/projects/\(project.id)/screens/\(screen.id)/notes/\(noteId)"
-        case let .addNote(request):
+        case .addNote(let request):
             return "/projects/\(request.project.id)/screens/\(request.screen.id)/notes"
-        case let .getNotifications(limit, offset):
+        case .getNotifications(let limit, let offset):
             return "/users/me/notifications?limit=\(limit)&offset=\(offset)"
-        case let .flagNotificationAsRead(id):
+        case .flagNotificationAsRead(let id):
             return "/users/me/notifications/\(id)"
-        case let .updateReadState(representations, _):
+        case .updateReadState(let representations, _):
             let ids = representations.map(\.id).joined(separator: "&id=")
             return "/users/me/notifications?id=\(ids)"
-        case let .updateNote(request):
+        case .updateNote(let request):
             return "/projects/\(request.project.id)/screens/\(request.screen.id)/notes/\(request.note.id)"
-        case let .addComment(request):
+        case .addComment(let request):
             return "/projects/\(request.project.id)/screens/\(request.screen.id)/notes/\(request.note.id)/comments"
-        case let .updateComment(request):
+        case .updateComment(let request):
             return "/projects/\(request.project.id)/screens/\(request.screen.id)/notes/\(request.note.id)/comments/\(request.comment.id)"
         case .getCurrentUser:
             return "/users/me"
-        case let .getScreenVersion(projectId, screenId, versionId):
+        case .getScreenVersion(let projectId, let screenId, let versionId):
             return "/projects/\(projectId)/screens/\(screenId)/versions/\(versionId)"
         }
     }
@@ -109,13 +109,13 @@ public enum ZeplinAPIURL: APIURL {
     // swiftlint:disable cyclomatic_complexity function_body_length
     public func bodyParams(token: Token?) -> [String: Any]? {
         switch self {
-        case let .getToken(code, configuration):
+        case .getToken(let code, let configuration):
             return [
                 "client_id": configuration.clientId,
                 "client_secret": configuration.clientSecret,
                 "redirect_uri": configuration.redirectURI,
                 "grant_type": "authorization_code",
-                "code": code
+                "code": code,
             ]
         case .refreshToken(let configuration):
             guard let token = token else { return nil }
@@ -123,49 +123,49 @@ public enum ZeplinAPIURL: APIURL {
                 "client_id": configuration.clientId,
                 "client_secret": configuration.clientSecret,
                 "refresh_token": token.refreshToken,
-                "grant_type": "refresh_token"
+                "grant_type": "refresh_token",
             ]
-        case let .addComment(request):
+        case .addComment(let request):
             return [
                 "content": request.content
             ]
-        case let .updateComment(request):
+        case .updateComment(let request):
             return [
                 "content": request.content
             ]
-        case let .addNote(request):
+        case .addNote(let request):
             return [
                 "content": request.content,
                 "position": [
                     "x": request.position.originX,
-                    "y": request.position.originY
+                    "y": request.position.originY,
                 ],
-                "color": request.color
+                "color": request.color,
             ]
-        case let .updateNote(request):
+        case .updateNote(let request):
             return [
                 "status": request.status ?? request.note.status,
                 "position": [
                     "x": request.position.originX,
-                    "y": request.position.originY
+                    "y": request.position.originY,
                 ],
-                "color": request.note.color.name ?? ""
+                "color": request.note.color.name ?? "",
             ]
         case .flagNotificationAsRead:
             return [
                 "is_read": true
             ]
-        case let .updateReadState(_, isRead):
+        case .updateReadState(_, let isRead):
             return [
                 "is_read": isRead
             ]
-        case let .inviteMember(_, handle):
+        case .inviteMember(_, let handle):
             return [
                 "handle": handle,
                 "role": "member",
-                "restricted": true
+                "restricted": true,
             ]
-        case let .updateMemberRole(_, _, role):
+        case .updateMemberRole(_, _, let role):
             return [
                 "role": role.rawValue
             ]
@@ -191,7 +191,8 @@ public enum ZeplinAPIURL: APIURL {
         }
 
         if let bodyParams = bodyParams(token: token),
-           let jsonData = try? JSONSerialization.data(withJSONObject: bodyParams) {
+            let jsonData = try? JSONSerialization.data(withJSONObject: bodyParams)
+        {
             request.httpBody = jsonData
         }
 

@@ -1,6 +1,6 @@
 //
 //  ZeplinProject.swift
-//  
+//
 //
 //  Created by Ilian Konchev on 13.02.20.
 //  Copyright © 2020 Ilian Konchev. All rights reserved.
@@ -91,17 +91,17 @@ public struct ZeplinProject: Decodable, Hashable, Identifiable, Equatable, Senda
     }
 }
 
-public extension ZeplinProject {
+extension ZeplinProject {
     /// Identifier for the user activity type
-    static let domainIdentifier = "io.snappmobile.zeplin.project"
+    public static let domainIdentifier = "io.snappmobile.zeplin.project"
 
     /// The user info assigned with the user activiy
-    var userActivityUserInfo: [AnyHashable: Any] {
+    public var userActivityUserInfo: [AnyHashable: Any] {
         return ["id": id]
     }
 
     /// The attribute set that describe the searchable item for the project
-    var attributeSet: CSSearchableItemAttributeSet {
+    public var attributeSet: CSSearchableItemAttributeSet {
         let attributeSet = CSSearchableItemAttributeSet(itemContentType: kUTTypeBookmark as String)
         attributeSet.title = name
         attributeSet.contentDescription = "\(platform.description) project"
@@ -109,7 +109,7 @@ public extension ZeplinProject {
     }
 
     /// The user activity that gets triggered when the user engages the searchable item
-    var userActivity: NSUserActivity {
+    public var userActivity: NSUserActivity {
         let activity = NSUserActivity(activityType: ZeplinProject.domainIdentifier)
         activity.title = name
         activity.contentAttributeSet = attributeSet

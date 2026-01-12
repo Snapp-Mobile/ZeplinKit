@@ -1,6 +1,6 @@
 //
 //  ZeplinUpdateCommentRequest.swift
-//  
+//
 //
 //  Created by Ilian Konchev on 17.07.20.
 //  Copyright © 2020 Ilian Konchev. All rights reserved.
@@ -37,11 +37,13 @@ public struct ZeplinUpdateCommentRequest: Sendable {
     ///   - note: Note that owns the comment
     ///   - comment: The comment to update
     ///   - content: The updated content
-    public init(project: ZeplinProject,
-                screen: ZeplinScreen,
-                note: ZeplinNote,
-                comment: ZeplinComment,
-                content: String) {
+    public init(
+        project: ZeplinProject,
+        screen: ZeplinScreen,
+        note: ZeplinNote,
+        comment: ZeplinComment,
+        content: String
+    ) {
         self.project = project
         self.screen = screen
         self.note = note

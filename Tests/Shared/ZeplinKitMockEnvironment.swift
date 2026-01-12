@@ -1,12 +1,13 @@
 //
 //  ZeplinKitMockEnvironment.swift
-//  
+//
 //
 //  Created by Ilian Konchev on 2.02.22.
 //
 
-@testable import Fetcher
 import Foundation
+
+@testable import Fetcher
 @testable import ZeplinKit
 
 final class ZeplinKitMockEnvironment: FetcherEnvironment {

@@ -1,6 +1,6 @@
 //
 //  ZeplinComment.swift
-//  
+//
 //
 //  Created by Ilian Konchev on 13.02.20.
 //  Copyright © 2020 Ilian Konchev. All rights reserved.
@@ -25,10 +25,12 @@ public struct ZeplinComment: Decodable, Hashable, Equatable, Sendable {
     ///   - author: Author of the comment
     ///   - content: Content of the comment
     ///   - updated: The unix timestamp when the comment was updated
-    public init(id: String,
-                author: ZeplinUser,
-                content: String,
-                updated: Double) {
+    public init(
+        id: String,
+        author: ZeplinUser,
+        content: String,
+        updated: Double
+    ) {
         self.id = id
         self.author = author
         self.content = content

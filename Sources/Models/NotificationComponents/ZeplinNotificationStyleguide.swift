@@ -1,6 +1,6 @@
 //
 //  ZeplinNotificationStyleguide.swift
-//  
+//
 //
 //  Created by Ilian Konchev on 4.11.21.
 //

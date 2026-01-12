@@ -1,6 +1,6 @@
 //
 //  ZeplinAddNoteRequest.swift
-//  
+//
 //
 //  Created by Ilian Konchev on 17.07.20.
 //  Copyright © 2020 Ilian Konchev. All rights reserved.
@@ -37,11 +37,13 @@ public struct ZeplinAddNoteRequest: Sendable {
     ///   - position: Normalized position of the note
     ///   - color: Note pin color
     ///   - content: Content of the note
-    public init(project: ZeplinProject,
-                screen: ZeplinScreen,
-                position: ZeplinNotePosition,
-                color: String,
-                content: String) {
+    public init(
+        project: ZeplinProject,
+        screen: ZeplinScreen,
+        position: ZeplinNotePosition,
+        color: String,
+        content: String
+    ) {
         self.project = project
         self.screen = screen
         self.position = position

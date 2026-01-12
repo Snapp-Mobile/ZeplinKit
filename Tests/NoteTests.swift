@@ -1,12 +1,13 @@
 //
 //  NoteTests.swift
-//  
+//
 //
 //  Created by Ilian Konchev on 8.02.22.
 //
 
-@testable import Fetcher
 import XCTest
+
+@testable import Fetcher
 @testable import ZeplinKit
 
 final class NoteTests: XCTestCase {
@@ -22,7 +23,10 @@ final class NoteTests: XCTestCase {
         let response: [ZeplinNote] = try await fetcher.fetch(sut.apiURL)
 
         // THEN
-        XCTAssertEqual(sut.apiURL.url?.absoluteString, "https://api.zeplin.dev/v1/projects/\(projectId)/screens/\(screenId)/notes?limit=1&offset=0")
+        XCTAssertEqual(
+            sut.apiURL.url?.absoluteString,
+            "https://api.zeplin.dev/v1/projects/\(projectId)/screens/\(screenId)/notes?limit=1&offset=0"
+        )
         XCTAssertEqual(sut.apiURL.requestMethod, "GET")
         XCTAssertEqual(response.count, 1)
         guard let note = response.first else {
@@ -42,7 +46,10 @@ final class NoteTests: XCTestCase {
         let note: ZeplinNote = try await fetcher.fetch(sut.apiURL)
 
         // THEN
-        XCTAssertEqual(sut.apiURL.url?.absoluteString, "https://api.zeplin.dev/v1/projects/\(projectId)/screens/\(screenId)/notes/\(noteId)")
+        XCTAssertEqual(
+            sut.apiURL.url?.absoluteString,
+            "https://api.zeplin.dev/v1/projects/\(projectId)/screens/\(screenId)/notes/\(noteId)"
+        )
         XCTAssertEqual(sut.apiURL.requestMethod, "GET")
         SharedAssertions.assertNote(note)
     }
@@ -59,7 +66,8 @@ final class NoteTests: XCTestCase {
         // THEN
         XCTAssertEqual(sut.apiURL.url?.absoluteString, "https://api.zeplin.dev/v1/projects/\(projectId)/screens/\(screenId)/notes")
         XCTAssertEqual(sut.apiURL.requestMethod, "POST")
-        guard let bodyParams = sut.apiURL.bodyParams(token: ZeplinKitMocks.token), let position = bodyParams["position"] as? [String: Float] else {
+        guard let bodyParams = sut.apiURL.bodyParams(token: ZeplinKitMocks.token), let position = bodyParams["position"] as? [String: Float]
+        else {
             return XCTFail("Unable to infer the request body")
         }
         XCTAssertEqual(bodyParams["content"] as? String, ZeplinKitMocks.addNoteRequest.content)
@@ -82,9 +90,13 @@ final class NoteTests: XCTestCase {
         let isMatchingResponseCode = try await fetcher.matchHTTPCode(sut.apiURL, code: 204)
 
         // THEN
-        XCTAssertEqual(sut.apiURL.url?.absoluteString, "https://api.zeplin.dev/v1/projects/\(projectId)/screens/\(screenId)/notes/\(noteId)")
+        XCTAssertEqual(
+            sut.apiURL.url?.absoluteString,
+            "https://api.zeplin.dev/v1/projects/\(projectId)/screens/\(screenId)/notes/\(noteId)"
+        )
         XCTAssertEqual(sut.apiURL.requestMethod, "PATCH")
-        guard let bodyParams = sut.apiURL.bodyParams(token: ZeplinKitMocks.token), let position = bodyParams["position"] as? [String: Float] else {
+        guard let bodyParams = sut.apiURL.bodyParams(token: ZeplinKitMocks.token), let position = bodyParams["position"] as? [String: Float]
+        else {
             return XCTFail("Unable to infer the request body")
         }
         XCTAssertEqual(bodyParams["status"] as? String, ZeplinKitMocks.updateNoteRequest.status)
@@ -105,7 +117,10 @@ final class NoteTests: XCTestCase {
         let response: ZeplinCreateCommentResponse = try await fetcher.fetch(sut.apiURL)
 
         // THEN
-        XCTAssertEqual(sut.apiURL.url?.absoluteString, "https://api.zeplin.dev/v1/projects/\(projectId)/screens/\(screenId)/notes/\(noteId)/comments")
+        XCTAssertEqual(
+            sut.apiURL.url?.absoluteString,
+            "https://api.zeplin.dev/v1/projects/\(projectId)/screens/\(screenId)/notes/\(noteId)/comments"
+        )
         XCTAssertEqual(sut.apiURL.requestMethod, "POST")
         guard let bodyParams = sut.apiURL.bodyParams(token: ZeplinKitMocks.token) else {
             return XCTFail("Unable to infer the request body")
@@ -128,7 +143,10 @@ final class NoteTests: XCTestCase {
         let isMatchingResponseCode = try await fetcher.matchHTTPCode(sut.apiURL, code: 204)
 
         // THEN
-        XCTAssertEqual(sut.apiURL.url?.absoluteString, "https://api.zeplin.dev/v1/projects/\(projectId)/screens/\(screenId)/notes/\(noteId)/comments/\(commentId)")
+        XCTAssertEqual(
+            sut.apiURL.url?.absoluteString,
+            "https://api.zeplin.dev/v1/projects/\(projectId)/screens/\(screenId)/notes/\(noteId)/comments/\(commentId)"
+        )
         XCTAssertEqual(sut.apiURL.requestMethod, "PATCH")
         guard let bodyParams = sut.apiURL.bodyParams(token: ZeplinKitMocks.token) else {
             return XCTFail("Unable to infer the request body")

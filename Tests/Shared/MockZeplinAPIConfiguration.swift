@@ -1,6 +1,6 @@
 //
 //  MockZeplinAPIConfiguration.swift
-//  
+//
 //
 //  Created by Ilian Konchev on 9.02.22.
 //

@@ -1,6 +1,6 @@
 //
 //  ZeplinNamedColor.swift
-//  
+//
 //
 //  Created by Ilian Konchev on 7.02.20.
 //  Copyright © 2020 Ilian Konchev. All rights reserved.
@@ -12,7 +12,9 @@ import UIKit
 ///
 /// There are 7 predefined colors to use with the Zeplin API. These colors are used for the note pins
 public enum ZeplinNamedColor: String, Sendable {
-    case yellow, orange, peach, green, turquoise, cornflowerBlue = "cornflower_blue", deepPurple = "deep_purple"
+    case yellow, orange, peach, green, turquoise
+    case cornflowerBlue = "cornflower_blue"
+    case deepPurple = "deep_purple"
 
     public var color: UIColor {
         switch self {

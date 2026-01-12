@@ -1,6 +1,6 @@
 //
 //  ZeplinGrid.swift
-//  
+//
 //
 //  Created by Ilian Konchev on 4.02.22.
 //
@@ -26,8 +26,8 @@ public struct ZeplinHorizontalGrid: Decodable, Hashable, Equatable, Sendable {
 
     public static func == (lhs: Self, rhs: Self) -> Bool {
         return lhs.gutterHeight == rhs.gutterHeight
-        && lhs.numberOfRows == rhs.numberOfRows
-        && lhs.rowHeight == rhs.rowHeight
+            && lhs.numberOfRows == rhs.numberOfRows
+            && lhs.rowHeight == rhs.rowHeight
     }
 }
 
@@ -53,9 +53,9 @@ public struct ZeplinVerticalGrid: Decodable, Hashable, Equatable, Sendable {
 
     public static func == (lhs: Self, rhs: Self) -> Bool {
         return lhs.gutterWidth == rhs.gutterWidth
-        && lhs.numberOfColumns == rhs.numberOfColumns
-        && lhs.columnWidth == rhs.columnWidth
-        && lhs.guttersOnOutside == rhs.guttersOnOutside
+            && lhs.numberOfColumns == rhs.numberOfColumns
+            && lhs.columnWidth == rhs.columnWidth
+            && lhs.guttersOnOutside == rhs.guttersOnOutside
     }
 }
 
@@ -82,8 +82,8 @@ public struct ZeplinGrid: Decodable, Hashable, Equatable, Sendable {
 
     public static func == (lhs: Self, rhs: Self) -> Bool {
         return lhs.horizontalOffset == rhs.horizontalOffset
-        && lhs.verticalOffset == rhs.verticalOffset
-        && lhs.horizontalGrid == rhs.horizontalGrid
-        && lhs.verticalGrid == rhs.verticalGrid
+            && lhs.verticalOffset == rhs.verticalOffset
+            && lhs.horizontalGrid == rhs.horizontalGrid
+            && lhs.verticalGrid == rhs.verticalGrid
     }
 }

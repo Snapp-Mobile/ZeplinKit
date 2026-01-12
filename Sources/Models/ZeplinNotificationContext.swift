@@ -1,6 +1,6 @@
 //
 //  ZeplinNotificationContext.swift
-//  
+//
 //
 //  Created by Ilian Konchev on 29.01.21.
 //  Copyright © 2021 Ilian Konchev. All rights reserved.
@@ -45,7 +45,7 @@ public struct ZeplinNotificationContext: Codable, CustomStringConvertible, Senda
             section?.description,
             styleguide?.description,
             project?.description,
-            organization?.description
+            organization?.description,
         ]
 
         return components.compactMap { $0 }.joined(separator: " ◦ ")

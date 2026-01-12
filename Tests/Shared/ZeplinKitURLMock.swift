@@ -1,6 +1,6 @@
 //
 //  ZeplinKitURLMock.swift
-//  
+//
 //
 //  Created by Ilian Konchev on 9.02.22.
 //
@@ -11,9 +11,9 @@ import ZeplinKit
 
 enum ZeplinKitURLMock: String, CaseIterable {
     case getScreen, getScreens, getProject, getProjects, getNotes, getCurrentUser, getProjectMembers, getSections,
-         getScreenVersions, getNotifications, updateNotification, updateNotifications, flagNotificationsAsUnread,
-         getScreenVersion, inviteMember, updateMemberRole, removeMember, getToken, refreshToken,
-         getNote, createNote, updateNote, createComment, updateComment
+        getScreenVersions, getNotifications, updateNotification, updateNotifications, flagNotificationsAsUnread,
+        getScreenVersion, inviteMember, updateMemberRole, removeMember, getToken, refreshToken,
+        getNote, createNote, updateNote, createComment, updateComment
 
     var apiURL: APIURL {
         switch self {
@@ -72,7 +72,8 @@ enum ZeplinKitURLMock: String, CaseIterable {
         switch self {
         case .createNote, .inviteMember, .createComment:
             return 201
-        case .updateNote, .updateComment, .updateNotification, .updateNotifications, .flagNotificationsAsUnread, .updateMemberRole, .removeMember:
+        case .updateNote, .updateComment, .updateNotification, .updateNotifications, .flagNotificationsAsUnread, .updateMemberRole,
+            .removeMember:
             return 204
         default:
             return 200
@@ -81,7 +82,8 @@ enum ZeplinKitURLMock: String, CaseIterable {
 
     var fileName: String? {
         switch self {
-        case .updateNote, .updateComment, .updateNotification, .updateNotifications, .flagNotificationsAsUnread, .updateMemberRole, .removeMember:
+        case .updateNote, .updateComment, .updateNotification, .updateNotifications, .flagNotificationsAsUnread, .updateMemberRole,
+            .removeMember:
             return "emptyResponse"
         default:
             return rawValue

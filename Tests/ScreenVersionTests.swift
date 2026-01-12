@@ -1,12 +1,13 @@
 //
 //  ScreenVersionTests.swift
-//  
+//
 //
 //  Created by Ilian Konchev on 8.02.22.
 //
 
-@testable import Fetcher
 import XCTest
+
+@testable import Fetcher
 @testable import ZeplinKit
 
 final class ScreenVersionTests: XCTestCase {
@@ -22,13 +23,16 @@ final class ScreenVersionTests: XCTestCase {
         let response: [ZeplinScreenVersionSummary] = try await fetcher.fetch(sut.apiURL)
 
         // THEN
-        XCTAssertEqual(sut.apiURL.url?.absoluteString, "https://api.zeplin.dev/v1/projects/\(projectId)/screens/\(screenId)/versions?limit=1&offset=0")
+        XCTAssertEqual(
+            sut.apiURL.url?.absoluteString,
+            "https://api.zeplin.dev/v1/projects/\(projectId)/screens/\(screenId)/versions?limit=1&offset=0"
+        )
         XCTAssertEqual(sut.apiURL.requestMethod, "GET")
         XCTAssertEqual(response.count, 1)
         guard let version = response.first,
-              let commit = version.commit,
-              let creator = version.creator,
-              let commitCreator = commit.author
+            let commit = version.commit,
+            let creator = version.creator,
+            let commitCreator = commit.author
         else {
             return XCTFail("unable to get the note or the first comment")
         }
@@ -62,13 +66,16 @@ final class ScreenVersionTests: XCTestCase {
         let version: ZeplinScreenVersion = try await fetcher.fetch(sut.apiURL)
 
         // THEN
-        XCTAssertEqual(sut.apiURL.url?.absoluteString, "https://api.zeplin.dev/v1/projects/\(projectId)/screens/\(screenId)/versions/latest")
+        XCTAssertEqual(
+            sut.apiURL.url?.absoluteString,
+            "https://api.zeplin.dev/v1/projects/\(projectId)/screens/\(screenId)/versions/latest"
+        )
         XCTAssertEqual(sut.apiURL.requestMethod, "GET")
         guard let creator = version.creator,
-              let commit = version.commit,
-              let commitAuthor = commit.author,
-              let grid = version.grid,
-              let backgroundColor = version.backgroundColor
+            let commit = version.commit,
+            let commitAuthor = commit.author,
+            let grid = version.grid,
+            let backgroundColor = version.backgroundColor
         else {
             return XCTFail("unable to get the versiion creator")
         }

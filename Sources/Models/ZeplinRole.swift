@@ -1,6 +1,6 @@
 //
 //  ZeplinRole.swift
-//  
+//
 //
 //  Created by Ilian Konchev on 6.03.20.
 //  Copyright © 2020 Ilian Konchev. All rights reserved.

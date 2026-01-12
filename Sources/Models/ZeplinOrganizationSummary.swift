@@ -1,6 +1,6 @@
 //
 //  ZeplinOrganizationSummary.swift
-//  
+//
 //
 //  Created by Ilian Konchev on 12.02.21.
 //  Copyright © 2021 Ilian Konchev. All rights reserved.

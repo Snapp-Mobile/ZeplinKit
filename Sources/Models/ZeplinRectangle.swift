@@ -1,6 +1,6 @@
 //
 //  ZeplinRectangle.swift
-//  
+//
 //
 //  Created by Ilian Konchev on 4.02.22.
 //
@@ -28,8 +28,8 @@ public struct ZeplinRectangle: Decodable, Hashable, Equatable, Sendable {
 
     public static func == (lhs: Self, rhs: Self) -> Bool {
         return lhs.originX == rhs.originX
-        && lhs.originY == rhs.originY
-        && lhs.width == rhs.width
-        && lhs.height == rhs.height
+            && lhs.originY == rhs.originY
+            && lhs.width == rhs.width
+            && lhs.height == rhs.height
     }
 }

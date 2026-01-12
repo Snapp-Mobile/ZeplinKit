@@ -1,6 +1,6 @@
 //
 //  ZeplinColorRepresentable.swift
-//  
+//
 //
 //  Created by Ilian Konchev on 22.01.22.
 //

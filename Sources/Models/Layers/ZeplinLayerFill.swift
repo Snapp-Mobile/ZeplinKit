@@ -1,6 +1,6 @@
 //
 //  ZeplinLayerFill.swift
-//  
+//
 //
 //  Created by Ann Kirillova on 12.01.2022.
 //
@@ -52,18 +52,19 @@ public struct ZeplinColorData: Decodable, Hashable, Equatable, Sendable, CustomS
 
     /// `UIColor` representation of the color
     public var color: UIColor {
-        return UIColor(displayP3Red: CGFloat(red) / 255.0,
-                       green: CGFloat(green) / 255.0,
-                       blue: CGFloat(blue) / 255,
-                       alpha: CGFloat(alpha))
+        return UIColor(
+            displayP3Red: CGFloat(red) / 255.0,
+            green: CGFloat(green) / 255.0,
+            blue: CGFloat(blue) / 255,
+            alpha: CGFloat(alpha))
     }
 
     public static func == (lhs: Self, rhs: Self) -> Bool {
         return lhs.red == rhs.red
-        && lhs.green == rhs.green
-        && lhs.blue == rhs.blue
-        && lhs.alpha == rhs.alpha
-        && lhs.sourceId == rhs.sourceId
+            && lhs.green == rhs.green
+            && lhs.blue == rhs.blue
+            && lhs.alpha == rhs.alpha
+            && lhs.sourceId == rhs.sourceId
     }
 
     public var description: String {

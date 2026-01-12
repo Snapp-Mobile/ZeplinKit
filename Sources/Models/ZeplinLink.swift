@@ -1,6 +1,6 @@
 //
 //  ZeplinLink.swift
-//  
+//
 //
 //  Created by Ilian Konchev on 4.02.22.
 //

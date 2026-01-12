@@ -1,6 +1,6 @@
 //
 //  ZeplinOrganizationMember.swift
-//  
+//
 //
 //  Created by Ilian Konchev on 7.02.22.
 //
@@ -21,9 +21,9 @@ public struct ZeplinOrganizationMember: Decodable, Hashable, Equatable, Sendable
 
     public static func == (lhs: Self, rhs: Self) -> Bool {
         return lhs.user == rhs.user
-        && lhs.role == rhs.role
-        && lhs.restricted == rhs.restricted
-        && lhs.tags == rhs.tags
-        && lhs.invited == rhs.invited
+            && lhs.role == rhs.role
+            && lhs.restricted == rhs.restricted
+            && lhs.tags == rhs.tags
+            && lhs.invited == rhs.invited
     }
 }

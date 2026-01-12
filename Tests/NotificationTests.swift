@@ -1,12 +1,13 @@
 //
 //  NotificationTests.swift
-//  
+//
 //
 //  Created by Ilian Konchev on 8.02.22.
 //
 
-@testable import Fetcher
 import XCTest
+
+@testable import Fetcher
 @testable import ZeplinKit
 
 final class NotificationTests: XCTestCase {

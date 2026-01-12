@@ -1,6 +1,6 @@
 //
 //  ZeplinNotificationRepresentation.swift
-//  
+//
 //
 //  Created by Ilian Konchev on 4.11.21.
 //
@@ -31,8 +31,8 @@ public struct ZeplinNotificationRepresentation: Hashable, Identifiable, Equatabl
 
     public static func == (lhs: Self, rhs: Self) -> Bool {
         return lhs.id == rhs.id
-        && lhs.created == rhs.created
-        && lhs.lastUpdated == rhs.lastUpdated
-        && lhs.isRead == rhs.isRead
+            && lhs.created == rhs.created
+            && lhs.lastUpdated == rhs.lastUpdated
+            && lhs.isRead == rhs.isRead
     }
 }

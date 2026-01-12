@@ -1,6 +1,6 @@
 //
 //  ZeplinUser.swift
-//  
+//
 //
 //  Created by Ilian Konchev on 13.02.20.
 //  Copyright © 2020 Ilian Konchev. All rights reserved.
@@ -39,6 +39,10 @@ public struct ZeplinUser: Codable, Equatable, Sendable {
     }
 
     public static func == (lhs: Self, rhs: Self) -> Bool {
-        return lhs.id == rhs.id && lhs.email == rhs.email && lhs.username == rhs.username && lhs.emotar == rhs.emotar && lhs.avatarURL == rhs.avatarURL
+        return lhs.id == rhs.id
+            && lhs.email == rhs.email
+            && lhs.username == rhs.username
+            && lhs.emotar == rhs.emotar
+            && lhs.avatarURL == rhs.avatarURL
     }
 }

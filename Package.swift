@@ -17,6 +17,7 @@ let package = Package(
     dependencies: [
         .package(url: "https://github.com/Snapp-Mobile/Fetcher", from: "0.0.2"),
         .package(url: "https://github.com/marmelroy/Zip", from: "2.0.0"),
+        .package(url: "https://github.com/Snapp-Mobile/SwiftFormatLintPlugin.git", from: "1.0.4"),
     ],
     targets: [
         .target(
@@ -25,12 +26,14 @@ let package = Package(
             path: "Sources",
             resources: [
                 .process("Mocks")
-            ]
+            ],
+            plugins: [.plugin(name: "Lint", package: "SwiftFormatLintPlugin")],
         ),
         .testTarget(
             name: "ZeplinKitTests",
             dependencies: ["ZeplinKit", "Fetcher"],
             path: "Tests",
+            plugins: [.plugin(name: "Lint", package: "SwiftFormatLintPlugin")],
         ),
     ]
 )

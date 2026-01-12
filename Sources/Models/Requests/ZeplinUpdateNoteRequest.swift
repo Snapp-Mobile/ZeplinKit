@@ -1,6 +1,6 @@
 //
 //  ZeplinAddNoteRequest.swift
-//  
+//
 //
 //  Created by Ilian Konchev on 17.07.20.
 //  Copyright © 2020 Ilian Konchev. All rights reserved.
@@ -37,11 +37,13 @@ public struct ZeplinUpdateNoteRequest: Sendable {
     ///   - note: The note to update
     ///   - position: The updated note position
     ///   - status: The updated note status
-    public init(project: ZeplinProject,
-                screen: ZeplinScreen,
-                note: ZeplinNote,
-                position: ZeplinNotePosition,
-                status: String?) {
+    public init(
+        project: ZeplinProject,
+        screen: ZeplinScreen,
+        note: ZeplinNote,
+        position: ZeplinNotePosition,
+        status: String?
+    ) {
         self.project = project
         self.screen = screen
         self.note = note

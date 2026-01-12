@@ -1,6 +1,6 @@
 //
 //  ZeplinBoundingRectangle.swift
-//  
+//
 //
 //  Created by Ilian Konchev on 13.12.21.
 //
@@ -27,11 +27,12 @@ public struct ZeplinBoundingRectangle: Decodable, Hashable, Sendable {
     }
 
     public static func * (left: ZeplinBoundingRectangle, right: CGFloat) -> ZeplinBoundingRectangle {
-        return ZeplinBoundingRectangle(originY: left.absolute.originY * right,
-                                       originX: left.absolute.originX * right,
-                                       width: left.width * right,
-                                       height: left.height * right,
-                                       absolute: left.absolute)
+        return ZeplinBoundingRectangle(
+            originY: left.absolute.originY * right,
+            originX: left.absolute.originX * right,
+            width: left.width * right,
+            height: left.height * right,
+            absolute: left.absolute)
     }
 
     // swiftlint:disable shorthand_operator
@@ -41,10 +42,10 @@ public struct ZeplinBoundingRectangle: Decodable, Hashable, Sendable {
 
     public static func == (lhs: Self, rhs: Self) -> Bool {
         return lhs.originX == rhs.originX
-        && lhs.originY == rhs.originY
-        && lhs.width == rhs.width
-        && lhs.height == rhs.height
-        && lhs.absolute == rhs.absolute
+            && lhs.originY == rhs.originY
+            && lhs.width == rhs.width
+            && lhs.height == rhs.height
+            && lhs.absolute == rhs.absolute
     }
 
     public var rectangle: CGRect {
@@ -53,9 +54,9 @@ public struct ZeplinBoundingRectangle: Decodable, Hashable, Sendable {
 
     public func contains(_ point: CGPoint) -> Bool {
         return point.x >= absolute.originX
-        && point.x <= absolute.originX + width
-        && point.y >= absolute.originY
-        && point.y <= absolute.originY + height
+            && point.x <= absolute.originX + width
+            && point.y >= absolute.originY
+            && point.y <= absolute.originY + height
     }
 
 }

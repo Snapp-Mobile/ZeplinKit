@@ -1,6 +1,6 @@
 //
 //  ZeplinAPIConfiguration.swift
-//  
+//
 //
 //  Created by Ilian Konchev on 24.03.20.
 //  Copyright © 2020 Ilian Konchev. All rights reserved.

@@ -1,12 +1,13 @@
 //
 //  ScreenTests.swift
-//  
+//
 //
 //  Created by Ilian Konchev on 8.02.22.
 //
 
-@testable import Fetcher
 import XCTest
+
+@testable import Fetcher
 @testable import ZeplinKit
 
 final class ScreenTests: XCTestCase {
@@ -36,7 +37,8 @@ final class ScreenTests: XCTestCase {
         let response: [ZeplinScreen] = try await fetcher.fetch(sut.apiURL)
 
         // THEN
-        XCTAssertEqual(sut.apiURL.url?.absoluteString, "https://api.zeplin.dev/v1/projects/\(projectId)/screens?sort=section&limit=1&offset=0")
+        XCTAssertEqual(
+            sut.apiURL.url?.absoluteString, "https://api.zeplin.dev/v1/projects/\(projectId)/screens?sort=section&limit=1&offset=0")
         XCTAssertEqual(sut.apiURL.requestMethod, "GET")
         XCTAssertEqual(response.count, 1)
         guard let screen = response.first else {

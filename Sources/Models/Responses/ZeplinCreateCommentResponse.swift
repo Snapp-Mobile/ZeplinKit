@@ -1,6 +1,6 @@
 //
 //  ZeplinCreateCommentResponse.swift
-//  
+//
 //
 //  Created by Ilian Konchev on 13.02.20.
 //  Copyright © 2020 Ilian Konchev. All rights reserved.

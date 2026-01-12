@@ -8,9 +8,9 @@
 import CoreGraphics
 import Fetcher
 import Foundation
-import os.log
 import UIKit
 import Zip
+import os.log
 
 public class ZeplinGroupedAssetContent: Hashable, Equatable, @unchecked Sendable {
     public let format: ZeplinAssetContent.Format
@@ -36,10 +36,12 @@ public class ZeplinGroupedAssetContent: Hashable, Equatable, @unchecked Sendable
         return lhs.format == rhs.format && lhs.displayName == rhs.displayName
     }
 
-    public init(format: ZeplinAssetContent.Format,
-                items: [ZeplinAssetContent],
-                displayName: String,
-                layerName: String?) {
+    public init(
+        format: ZeplinAssetContent.Format,
+        items: [ZeplinAssetContent],
+        displayName: String,
+        layerName: String?
+    ) {
         let sortedAssets = items.sorted(by: { $0.format.rawValue < $1.format.rawValue })
 
         self.format = format
@@ -54,9 +56,10 @@ public class ZeplinGroupedAssetContent: Hashable, Equatable, @unchecked Sendable
                 os_log("Unexpected amount of assets", log: .viewCycle, type: .debug)
                 return nil
             }
-            return try await fetcher.download(by: item.url,
-                                              with: item.format.rawValue,
-                                              displayName: displayName)
+            return try await fetcher.download(
+                by: item.url,
+                with: item.format.rawValue,
+                displayName: displayName)
         } else {
             return try await fetchZIPURL(using: fetcher)
         }
@@ -70,10 +73,11 @@ public class ZeplinGroupedAssetContent: Hashable, Equatable, @unchecked Sendable
             for assetContent in items where isAllowedDensity(assetContent.density) {
                 fileName = displayName + "_" + format.rawValue
                 group.addTask {
-                    return try await fetcher.download(by: assetContent.url,
-                                                      with: assetContent.format.rawValue,
-                                                      displayName: self.displayName,
-                                                      density: assetContent.density)
+                    return try await fetcher.download(
+                        by: assetContent.url,
+                        with: assetContent.format.rawValue,
+                        displayName: self.displayName,
+                        density: assetContent.density)
                 }
             }
             for try await fileURL in group {
