@@ -56,3 +56,11 @@ func loadProjects() async {
     }
 }
 ```
+
+## Documentation
+
+For more information visit [Documentation](https://swiftpackageindex.com/oleksiikolomiietssnapp/MediaBridge/main/documentation/mediabridge).
+
+## License
+
+MIT License - see the [LICENSE](LICENSE) file for details.
