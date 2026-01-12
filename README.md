@@ -6,6 +6,7 @@
 
 Swift client library for the public Zeplin API
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-22C55E)](LICENSE)
 ## Overview
 
 ZeplinKit is a collection of data models and preconfigured API URLs to consume the public Zeplin API. Adding ZeplinKit to your app gives you a flexible client for consuming the Zeplin API that fits in any workflow.
