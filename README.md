@@ -7,7 +7,7 @@
 Swift client library for the public Zeplin API
 
 [![Swift Package Index](https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2FoSnapp-Mobile%2FZeplinKit%2Fbadge%3Ftype%3Dswift-versions)](https://swiftpackageindex.com/oleksiikolomiietssnapp/MediaBridge)
-[![iOS 13.0+](https://img.shields.io/badge/iOS-15.0+-007AFF?logo=apple&logoColor=white)](https://www.apple.com/ios/)
+[![iOS 13.0+](https://img.shields.io/badge/iOS-13.0+-007AFF?logo=apple&logoColor=white)](https://www.apple.com/ios/)
 [![Latest Release](https://img.shields.io/github/v/release/Snapp-Mobile/ZeplinKit?color=8B5CF6&logo=github&logoColor=white)](https://github.com/Snapp-Mobile/ZeplinKit/releases)
 [![Tests](https://github.com/Snapp-Mobile/ZeplinKit/actions/workflows/test.yml/badge.svg)](https://github.com/Snapp-Mobile/ZeplinKit/actions)
 [![License: MIT](https://img.shields.io/badge/License-MIT-22C55E)](LICENSE)
