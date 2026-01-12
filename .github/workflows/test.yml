@@ -39,7 +39,9 @@ jobs:
       run: |
         xcodebuild test \
           -scheme ZeplinKit \
+          -skipPackagePluginValidation \
           -destination "id=${{ env.SIMULATOR_ID }}" \
           -derivedDataPath .build \
           -enableCodeCoverage YES \
+          -sdk iphonesimulator \
           -verbose
