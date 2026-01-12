@@ -6,7 +6,7 @@
 
 Swift client library for the public Zeplin API
 
-[![Latest Release](https://img.shields.io/github/v/release/Snapp-Mobile/ZeplinKit?color=8B5CF6&logo=github&logoColor=white)](https://github.com/Snapp-Mobile/MediaBridge/releases)
+[![Latest Release](https://img.shields.io/github/v/release/Snapp-Mobile/ZeplinKit?color=8B5CF6&logo=github&logoColor=white)](https://github.com/Snapp-Mobile/ZeplinKit/releases)
 [![Tests](https://github.com/Snapp-Mobile/ZeplinKit/actions/workflows/test.yml/badge.svg)](https://github.com/Snapp-Mobile/ZeplinKit/actions)
 [![License: MIT](https://img.shields.io/badge/License-MIT-22C55E)](LICENSE)
 
