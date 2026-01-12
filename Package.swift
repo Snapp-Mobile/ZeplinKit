@@ -15,7 +15,7 @@ let package = Package(
         )
     ],
     dependencies: [
-        .package(url: "https://github.com/Snapp-Mobile/Fetcher", from: "0.0.2"),
+        .package(url: "https://github.com/Snapp-Mobile/Fetcher.git", from: "0.0.2"),
         .package(url: "https://github.com/marmelroy/Zip", from: "2.0.0"),
         .package(url: "https://github.com/Snapp-Mobile/SwiftFormatLintPlugin.git", from: "1.0.4"),
     ],

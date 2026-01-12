@@ -6,31 +6,47 @@
 
 Swift client library for the public Zeplin API
 
+[![Latest Release](https://img.shields.io/github/v/release/oleksiikolomiietssnapp/MediaBridge?color=8B5CF6&logo=github&logoColor=white)](https://github.com/oleksiikolomiietssnapp/MediaBridge/releases)
+[![Tests](https://github.com/oleksiikolomiietssnapp/MediaBridge/actions/workflows/test.yml/badge.svg)](https://github.com/oleksiikolomiietssnapp/MediaBridge/actions)
 [![License: MIT](https://img.shields.io/badge/License-MIT-22C55E)](LICENSE)
+
 ## Overview
 
-ZeplinKit is a collection of data models and preconfigured API URLs to consume the public Zeplin API. Adding ZeplinKit to your app gives you a flexible client for consuming the Zeplin API that fits in any workflow.
+ZeplinKit provides data models and preconfigured API endpoints for the [Zeplin API](https://docs.zeplin.dev/docs/getting-started-with-zeplin-api). It offers a flexible client that integrates with any workflow, supporting both Combine publishers and Swift Concurrency (iOS 13+/macOS 11+).
 
-Zeplin kit utilizes `Fetcher` - a tiny network client for fetching data off the web. The client exposes both a `Combine` publisher for the desired Zeplin endpoints and a Swift Concurrency interface (where available).
+The library includes `Fetcher`, a lightweight network client, and `ZeplinAPIURL`, an enumeration of API endpoints that encapsulates the required parameters for each call.
 
-The the core of the ZeplinKit library is `ZeplinKit/ZeplinAPIURL` - an enumeration of the Zeplin API endpoints which
-encapsulates the parameters needed to do the API calls. The enum values should be passed to the `Fetcher` client after 
-populating the associated values where needed.
+### Installation
 
-For example, if you want to fetch the first 10 projects for your account, you would do something like this:
+```swift
+// Swift Package Manager
+.package(url: "https://github.com/Snapp-Mobile/ZeplinKit.git", from: "0.1.0")
+```
+
+### Setup
 
 ```swift
 import ZeplinKit
-// init the fetcher with an environment
-let fetcher = Fetcher(environment: ...)
-// prepare the APIURL
-let url = ZeplinAPIURL.getProjects(10, 0)
-do {
-    // execute the request and get the list of projects
-    let projects: [ZeplinProject] = try await fetcher.fetch(url)
-    // do something with the projects
-} catch let error {
-    // handle any possible error
-    print("Error:", error.localizedDescription)
+
+let fetcher = Fetcher(
+    environment: .production,
+    accessToken: "your_zeplin_access_token"
+)
+```
+
+### Usage
+
+To fetch the first 10 projects for your account:
+
+```swift
+func loadProjects() async {
+    let url = ZeplinAPIURL.getProjects(10, 0)
+    
+    do {
+        let projects: [ZeplinProject] = try await fetcher.fetch(url)
+        // Handle projects
+    } catch {
+        print("Failed to fetch projects: \(error.localizedDescription)")
+    }
 }
 ```
