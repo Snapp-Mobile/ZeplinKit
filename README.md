@@ -59,7 +59,7 @@ func loadProjects() async {
 
 ## Documentation
 
-For more information visit [Documentation](https://swiftpackageindex.com/oleksiikolomiietssnapp/MediaBridge/main/documentation/mediabridge).
+For more information visit [Documentation](https://swiftpackageindex.com/Snapp-Mobile/ZeplinKit/0.1.0/documentation/zeplinkit).
 
 ## License
 
