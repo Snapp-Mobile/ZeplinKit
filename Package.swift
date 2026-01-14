@@ -27,13 +27,13 @@ let package = Package(
             resources: [
                 .process("Mocks")
             ],
-            plugins: [.plugin(name: "Lint", package: "SwiftFormatLintPlugin")],
+            plugins: [.plugin(name: "Lint", package: "SwiftFormatLintPlugin")]
         ),
         .testTarget(
             name: "ZeplinKitTests",
             dependencies: ["ZeplinKit", "Fetcher"],
             path: "Tests",
-            plugins: [.plugin(name: "Lint", package: "SwiftFormatLintPlugin")],
+            plugins: [.plugin(name: "Lint", package: "SwiftFormatLintPlugin")]
         ),
     ]
 )
